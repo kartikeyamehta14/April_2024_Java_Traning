@@ -1,0 +1,26 @@
+package com.npci.Loan.Application.Entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "Loan")
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Loan {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "loan_id")
+    private int loanId;
+
+    @Column(name = "loan_type")
+    private String loanType;
+
+    // Constructors, getters, setters, and other methods can be added as needed
+}

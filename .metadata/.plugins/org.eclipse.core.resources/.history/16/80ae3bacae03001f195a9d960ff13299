@@ -1,0 +1,30 @@
+package com.npci.Loan.Application.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.npci.Loan.Application.Entity.Customer;
+import com.npci.Loan.Application.Repo.CustomerRepo;
+
+@Service
+public class CustomerService {
+	  private final CustomerRepo customerRepository;
+
+	    @Autowired
+	    public CustomerService(CustomerRepo customerRepository) {
+	        this.customerRepository = customerRepository;
+	    }
+
+	    public Customer saveCustomer(Customer customer) {
+	        return customerRepository.save(customer);
+	    }
+	    
+	    
+	    
+	   
+
+	    public boolean login(String emailId, String password) {
+	        Customer customer = customerRepository.findByEmailIdAndPassword(emailId, password);
+	        return customer != null;
+	    }
+}

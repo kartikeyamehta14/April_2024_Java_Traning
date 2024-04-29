@@ -1,0 +1,12 @@
+package com.npci.Loan.Application.Repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.npci.Loan.Application.Entity.LoanApplicationEntity;
+
+public interface LoanApplicationRepo extends JpaRepository<LoanApplicationEntity, Integer> {
+	
+	
+	@Query(value="")
+
+}

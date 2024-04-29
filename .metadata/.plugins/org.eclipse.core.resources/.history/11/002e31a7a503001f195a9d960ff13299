@@ -1,0 +1,5 @@
+package com.npci.Loan.Application.Entity;
+
+public class Customer {
+
+}

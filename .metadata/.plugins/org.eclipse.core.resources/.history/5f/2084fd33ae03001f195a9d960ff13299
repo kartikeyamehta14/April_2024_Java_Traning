@@ -1,0 +1,8 @@
+package com.npci.Loan.Application.Wrapper;
+
+public class LoginForm {
+    private String emailId;
+    private String password;
+
+    // Getters and setters
+}

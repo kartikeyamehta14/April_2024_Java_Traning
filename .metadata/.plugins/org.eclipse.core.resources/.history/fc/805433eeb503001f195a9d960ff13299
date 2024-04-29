@@ -1,0 +1,5 @@
+package com.npci.Loan.Application.Service;
+
+public class LoanApplication {
+
+}

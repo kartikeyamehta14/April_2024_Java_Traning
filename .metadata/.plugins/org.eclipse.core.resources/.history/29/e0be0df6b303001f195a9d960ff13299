@@ -1,0 +1,13 @@
+package com.npci.Loan.Application.Repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.npci.Loan.Application.Entity.Customer;
+import com.npci.Loan.Application.Entity.Loan;
+@Repository
+public interface LoanRepo  extends JpaRepository<Loan, Integer>{
+
+	Customer findAll(Customer customer);
+
+}

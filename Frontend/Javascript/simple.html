@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="text" id="a">
+    <button onclick="getUser3()"> Fetch</button>
+    <div id="b"></div>
+
+    <script type="text/javascript">
+        function getUser(){
+            let xhr = new XMLHttpRequest();
+            let userId = document.getElementById('a').value;
+            let url = `https://jsonplaceholder.typicode.com/users/${userId}`;
+        
+            xhr.open('GET',url);
+            xhr.send();
+            xhr.onreadystatechange= () =>{
+                if(xhr.readyState==4){
+                 document.getElementById('b').innerHTML  = xhr.responseText;
+
+                }
+            }
+
+        }
+        function getUser2(){
+            
+            let userId = document.getElementById('a').value;
+            let url = `https://jsonplaceholder.typicode.com/users/${userId}`;
+            fetch(url)
+        .then(response => response.json())
+        .then(json => {
+            
+            let jsonString = JSON.stringify(json, null, 2); 
+          
+            document.getElementById('b').innerHTML = `<pre>${jsonString}</pre>`;
+        })
+        
+        async function getUser3(){
+            let userId = document.getElementById('a').value;
+            let url = `https://jsonplaceholder.typicode.com/users/${userId}`;
+
+            let res = await fetch(url);
+            let  js  = await res.json();
+            let jsonStringData = JSON.stringify(js, null, 2); 
+            
+            document.getElementById('b').innerHTML = `<pre>${js}</pre>`;
+
+
+        }
+
+        }
+    </script>
+</body>
+</html>
+
+

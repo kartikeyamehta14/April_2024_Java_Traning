@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Hi Learning JS For React </h1>
+    <button onClick="increament()">+</button>  
+    <button onClick="decerement()">-</button>  
+    <div id = 'a'>
+               
+    </div>
+    <script src="main.js"></script>
+    <script type='text/javascript'>
+            let username ='kartikeya';
+            let age =23;
+            let email ='kartikeya@gmail.com';
+        document.write('<p>Name='+username+',Age='+age+',Email='+email+'</p>');
+        document.write(`<p>Name=${username} , Age=${age},Email=${email}</p>`);
+        class Employee{
+            constructor(id ,name,salary){
+                this.id = id;
+                this.name=name;
+                this .salary=salary;
+            }
+
+            display(){
+                document.write(`<p>id=${this.id} , name=${this.name},Salary=${this.salary}</p>`);
+
+            }
+        }
+
+
+        let employee1=new Employee(1,'Kartikeya','7889089');
+        let employee2=new Employee(2,'Kartikeya','90000000000');
+        let employee3 = {id:400,name:'Siddhart',salary:45677,print:function(){
+            document.write(`<p>id=${this.id} , name=${this.name},Salary=${this.salary}</p>`);
+        }}
+        employee1.display();
+        employee2.display();
+        employee3.print();
+
+        let items=[2,3,4,5,6];
+        for (let i=0;i<items.length;i++){
+            document.write(`<p>i=${items[i]}</p>`);
+        }
+        document.write(`<p>*****************</p>`);
+        items.forEach(element => {
+            document.write(`<p>i=${element}</p>`);
+        });
+        document.write(`<p>*****************</p>`);
+     
+        items.map(item=>{
+            document.write(`<p>i=${item}</p>`);
+        })
+        document.write(`<p>*****************</p>`);
+
+        let newArray =   items.map(item=>{
+           return item*10;
+
+        })
+
+        newArray.forEach(element => {
+            document.write(`<p>i=${element}</p>`);
+        });
+  
+
+        let rendomNumber = Math.ceil(Math.random()*1000);
+        document.write(`<p>${rendomNumber}</p>`);
+        let otp4digit=rendomNumber.toString().padStart(4,'0');
+        let otp6digit=rendomNumber.toString().padEnd(6,'0');
+
+        
+        document.write(`<p>otp4digit=${otp4digit}</p>`);
+        document.write(`<p>otp6digit=${otp6digit}</p>`);
+
+
+
+
+        let arrays = [{id:200,name:"Sid",address:{state:"KA",city:"BLR"}},
+        {id:200,name:"Sid"},
+
+        {id:4200,name:"Kartikeya",address:{state:"MH",city:"JBP"}}]
+
+        arrays.forEach(element => {
+            if(element.address!=undefined){
+            document.write(`<p>${element.name}</p>`)
+            }
+        });
+
+        document.write(`<p>*****************</p>`);
+
+        arrays.forEach((item,index) => document.write(`<p>Name=${item.name}, State ${item.address?.state}</p>`));
+
+
+        //Ternary Operater
+        //item.address.state !='undefined'?item.address?.state:'NP'
+
+          
+      
+
+ 
+
+
+
+        document.write(`<p></p>`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+package com.npci.Loan.Application.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.npci.Loan.Application.Entity.Customer;
+import com.npci.Loan.Application.Entity.LoanApplicationEntity;
+import com.npci.Loan.Application.Repo.CustomerRepo;
+import com.npci.Loan.Application.Repo.LoanApplicationRepo;
+
+@Service
+public class LoanApplication {
+
+	
+	
+	  private final LoanApplicationRepo applicationRepo;
+
+    @Autowired
+    public LoanApplication(LoanApplicationRepo applicationRepo) {
+        this.applicationRepo = applicationRepo;
+    }
+
+    public Object 	saveLoanApplication(LoanApplicationEntity  loanApplicationEntity) {
+        return applicationRepo.save(loanApplicationEntity);
+    }
+}

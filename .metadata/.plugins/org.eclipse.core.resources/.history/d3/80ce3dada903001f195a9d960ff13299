@@ -1,0 +1,42 @@
+package com.npci.Loan.Application.Entity;
+
+import jakarta.persistence.*;
+
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "Customer")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Customer {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "customer_id")
+    private int customerId;
+
+    @Column(name = "firstname")
+    private String firstName;
+
+    @Column(name = "lastname")
+    private String lastName;
+
+    @Column(name = "email_id")
+    private String emailId;
+
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "phone")
+    private String phone;
+
+    @Column(name = "pan")
+    private String pan;
+
+}
+

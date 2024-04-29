@@ -1,0 +1,5 @@
+package com.npci.Loan.Application.Wrapper;
+
+public class LoginForm {
+
+}
